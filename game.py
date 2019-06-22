@@ -201,26 +201,19 @@ class BrickWall (pygame.sprite.Group):
         """
             adds a brick to this BrickWall (group)
         """
-        ########todo########################
         self._bricks.append(brick)
-        ########todo########################
     def remove(self,brick):
         """
             removes a brick from this BrickWall (group)
         """
-        ########todo########################
         self._bricks.remove(brick)
-        ########todo########################
     def draw(self):
         """
             draws all bricks onto screen.
         """
-        ########todo########################
         for brick in self._bricks:
             if brick != None:
                 brick.draw()
-        ########todo########################
-        
     def update(self, ball):
         """
             checks collision between ball and bricks.
@@ -237,24 +230,16 @@ class BrickWall (pygame.sprite.Group):
         """
             Has player win the game?
         """
-        ########todo########################
-        if len(self._bricks) == 0:
-          return True
-        return False
-        
-        ########todo########################
+        return len(self._bricks) == 0
     def collide (self, ball):
         """
             check collisions between the ball and 
             any of the bricks.
         """
-        ########todo########################
         for brick in self._bricks:
-          if brick.collide(ball):
-            return True
-        
+            if brick.collide(ball):
+                return True
         return False
-        ########todo########################
 
 def main():
     # The game objects ball, paddle and brick wall
